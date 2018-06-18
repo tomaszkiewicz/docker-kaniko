@@ -5,7 +5,7 @@ COPY pause /pause
 COPY busybox /busybox
 COPY busybox /bin/sh
 
-RUN /busybox mkdir -p /bin
+RUN /busybox mkdir -p /bin; /busybox ln -s /busybox /bin/ln
 
 RUN ln -s /busybox /bin/touch; \
     ln -s /busybox /bin/sleep; \
