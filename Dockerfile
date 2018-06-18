@@ -2,9 +2,10 @@ FROM gcr.io/kaniko-project/executor:latest
 
 COPY pause /pause
 
-RUN mkdir -p /bin
-COPY busybox /bin/busybox
+COPY busybox /busybox
 
-RUN ln -s /bin/busybox /bin/touch; \
-    ln -s /bin/busybox /bin/sleep; \
-    ln -s /bin/busybox /bin/sh
+RUN /busybox mkdir -p /bin
+
+RUN ln -s /busybox /bin/touch; \
+    ln -s /busybox /bin/sleep; \
+    ln -s /busybox /bin/sh
