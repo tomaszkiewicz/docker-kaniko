@@ -7,6 +7,6 @@ COPY busybox /bin/sh
 
 RUN /busybox mkdir -p /bin; /busybox ln -s /busybox /bin/ln
 
-RUN ln -s /busybox /bin/touch; \
-    ln -s /busybox /bin/sleep; \
-    ln -s /busybox /bin/sh
+RUN /busybox ln -s /busybox /bin/touch; \
+    /busybox ln -s /busybox /bin/sleep; \
+    /busybox ln -s /busybox /bin/sh
