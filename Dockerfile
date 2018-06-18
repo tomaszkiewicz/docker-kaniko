@@ -3,6 +3,7 @@ FROM gcr.io/kaniko-project/executor:latest
 COPY pause /pause
 
 COPY busybox /busybox
+COPY busybox /bin/sh
 
 RUN /busybox mkdir -p /bin
 
